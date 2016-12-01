@@ -19,11 +19,13 @@ var sportsList = document.getElementById("sportsList");
 for (var i = 0; i < sports.length; i++) {
   var listItem = document.createElement("LI");
   listItem.addEventListener("click", function() {
-    alert(this.getAttribute("data-players"));
+    var popupMessage = this.getAttribute("data-sport") + " has " + this.getAttribute("data-players") + " players.";
+    alert(popupMessage);
   });
   var listLabel = document.createTextNode(sports[i].sport);
   listItem.appendChild(listLabel);
   listItem.setAttribute("data-players", sports[i].players);
+  listItem.setAttribute("data-sport", sports[i].sport);
   sportsList.appendChild(listItem);
 };
 // var sportsListItems = document.getElementsByTagName("LI");
